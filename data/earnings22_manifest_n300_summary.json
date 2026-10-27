@@ -1,0 +1,19 @@
+{
+  "dataset": "hf-audio/open-asr-leaderboard",
+  "config": "earnings22",
+  "split": "test",
+  "population_utterances": 2741,
+  "population_calls": 6,
+  "population_audio_hours": 5.427600555555556,
+  "sample_utterances": 300,
+  "sample_calls": 6,
+  "sample_audio_hours": 0.5914019965277778,
+  "seed": 42,
+  "sampling": "proportional within source-call x duration-tertile strata",
+  "duration_quantiles_seconds": {
+    "0": 0.2200625,
+    "0.3333333333333333": 4.1200625,
+    "0.6666666666666666": 8.460041666666667,
+    "1": 36.36
+  }
+}

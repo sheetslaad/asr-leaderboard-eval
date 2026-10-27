@@ -1,0 +1,2 @@
+model,device,parameters_millions,load_seconds,utterances_per_repeat,repeats,audio_seconds_per_repeat,median_latency_sec,p95_latency_sec,real_time_factor,throughput_x,mps_allocated_mb_after_warmup,mps_driver_mb_after_warmup
+facebook/wav2vec2-base-960h,mps,94.39632,0.7880007917992771,30,3,238.415,0.05125437490642071,0.13103196825832128,0.007785978572619784,128.43600719845358,360.093505859375,1088.734375

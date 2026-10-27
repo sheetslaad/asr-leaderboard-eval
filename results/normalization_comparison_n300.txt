@@ -1,0 +1,40 @@
+
+===== openai_whisper-base.en_manifest_n300.csv =====
+
+Normalization comparison
+---------------------------------------------
+Raw                          WER: 98.88%
+Lowercase                    WER: 17.04%
+Lowercase + punctuation      WER: 4.10%
+Whisper Basic                WER: 4.10%
+Whisper English              WER: 3.47%
+
+===== openai_whisper-medium.en_manifest_n300.csv =====
+
+Normalization comparison
+---------------------------------------------
+Raw                          WER: 98.80%
+Lowercase                    WER: 16.89%
+Lowercase + punctuation      WER: 3.25%
+Whisper Basic                WER: 3.25%
+Whisper English              WER: 2.77%
+
+===== openai_whisper-small.en_manifest_n300.csv =====
+
+Normalization comparison
+---------------------------------------------
+Raw                          WER: 98.80%
+Lowercase                    WER: 16.58%
+Lowercase + punctuation      WER: 2.88%
+Whisper Basic                WER: 2.88%
+Whisper English              WER: 2.39%
+
+===== openai_whisper-tiny.en_manifest_n300.csv =====
+
+Normalization comparison
+---------------------------------------------
+Raw                          WER: 99.08%
+Lowercase                    WER: 17.48%
+Lowercase + punctuation      WER: 5.42%
+Whisper Basic                WER: 5.42%
+Whisper English              WER: 4.69%

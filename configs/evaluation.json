@@ -1,0 +1,76 @@
+{
+  "benchmark": {
+    "name": "Hugging Face Open ASR Leaderboard",
+    "dataset": "openslr/librispeech_asr",
+    "config": "clean",
+    "split": "test",
+    "local_manifest": "data/librispeech_test_clean_metadata.csv",
+    "sample_size": 2620,
+    "sampling_seed": 42
+  },
+  "out_of_domain_evaluation": {
+    "dataset": "hf-audio/open-asr-leaderboard",
+    "config": "earnings22",
+    "split": "test",
+    "population_segments": 2741,
+    "population_source_calls": 6,
+    "local_manifest": "data/earnings22_manifest_n300.csv",
+    "sample_size": 300,
+    "sample_source_calls": 6,
+    "sampling_design": "proportional allocation within source-call by duration-tertile strata",
+    "sampling_seed": 42,
+    "whisper_timestamp_policy": "auto: timestamps only for audio longer than 30 seconds",
+    "archived_public_wer_percent": {
+      "openai/whisper-tiny.en": 19.12,
+      "openai/whisper-base.en": 15.09,
+      "facebook/wav2vec2-base-960h": 48.47,
+      "openai/whisper-small.en": 12.97,
+      "openai/whisper-medium.en": 12.63
+    },
+    "published_comparison_note": "Legacy 2022 full-Earnings22 model-card artifacts; the current leaderboard uses a different cleaned, call-level scoring condition.",
+    "note": "Source-call prefixes are clustering units, not verified speaker identities. The six-cluster bootstrap is descriptive and has limited precision."
+  },
+  "models": [
+    "openai/whisper-tiny.en",
+    "openai/whisper-base.en",
+    "openai/whisper-small.en",
+    "openai/whisper-medium.en",
+    "facebook/wav2vec2-base-960h"
+  ],
+  "inference": {
+    "library": "transformers",
+    "library_version": "5.20.2",
+    "pipeline": "automatic-speech-recognition",
+    "device": "mps",
+    "batch_size": 1,
+    "return_timestamps": "true for the original LibriSpeech Whisper runs; auto (>30 seconds only) for the corrected Earnings22 Whisper runs; false for Wav2Vec2",
+    "language": null,
+    "task": null,
+    "beam_size": null,
+    "temperature": null,
+    "dtype": "pipeline default",
+    "chunk_length_seconds": null,
+    "note": "Null values were not explicitly configured; Transformers generation defaults applied."
+  },
+  "scoring": {
+    "primary": "Whisper English normalizer + corpus WER",
+    "sensitivity": [
+      "raw",
+      "lowercase",
+      "lowercase and punctuation removal",
+      "custom product rules",
+      "Whisper Basic normalizer"
+    ],
+    "uncertainty": "paired speaker-cluster bootstrap",
+    "bootstrap_draws": 10000,
+    "bootstrap_seed": 42
+  },
+  "runtime_benchmark": {
+    "manifest": "results/runtime_benchmark_n30_manifest.csv",
+    "utterances": 30,
+    "duration_buckets": 3,
+    "utterances_per_bucket": 10,
+    "warmup_calls_per_model": 1,
+    "repeats": 3
+  }
+}

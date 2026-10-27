@@ -1,0 +1,23 @@
+{
+  "dataset": "openslr/librispeech_asr",
+  "config": "clean",
+  "split": "test",
+  "n": 300,
+  "seed": 42,
+  "total_speakers": 40,
+  "duration_summary": {
+    "count": 300.0,
+    "mean": 7.4697666666666676,
+    "std": 4.993258660674097,
+    "min": 1.485,
+    "25%": 3.715,
+    "50%": 6.285,
+    "75%": 9.594999999999999,
+    "max": 33.91
+  },
+  "duration_buckets": {
+    "medium": 103,
+    "long": 101,
+    "short": 96
+  }
+}

@@ -1,0 +1,12 @@
+numpy==2.4.6
+pandas==3.1.0
+matplotlib==3.11.2
+datasets==5.1.0
+transformers==5.20.2
+torch==2.14.1
+torchcodec==0.17.0
+soundfile==0.14.0
+jiwer==4.0.0
+nbconvert==7.17.2
+ipykernel==7.4.0
+tqdm==4.70.1
